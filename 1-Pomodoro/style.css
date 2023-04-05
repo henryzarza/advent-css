@@ -5,6 +5,13 @@
   --green: #00aa51;
   --white: #FFF;
   --black: #000000;
+  --pomodoro-container-size: 31.25rem;
+
+  /* Circular progress bar */
+  --circle-distance-center: 50px;
+  --circle-progress-size: calc(var(--pomodoro-container-size) + var(--circle-distance-center));
+  --circle-border-width: 1px;
+  --progress: 0;
 }
 /* End variables */
 
@@ -42,24 +49,9 @@ button {
 
 .pomodoro-container {
   --timer-color: var(--red);
-  background-color: var(--black);
   border-radius: 50%;
   box-shadow: -5px 14px 44px var(--black), 5px -16px 50px rgba(255, 255, 255, 0.15);
-  overflow: hidden;
-  padding: 0.625rem;
   position: relative;
-}
-
-.pomodoro-container::before {
-  background-color: var(--timer-color);
-  bottom: 0;
-  content: "";
-  left: 0;
-  /* TODO: this needs to be replaced for the functionality */
-  height: 50%;
-  position: absolute;
-  top: 0;
-  right: 0;
 }
 
 .pomodoro-inner-container {
@@ -69,12 +61,12 @@ button {
   box-shadow: inset 0px 0px 114px rgba(0, 0, 0, 0.45);
   display: flex;
   flex-direction: column;
-  height: 31.25rem;
+  height: var(--pomodoro-container-size);
   justify-content: end;
   max-width: 100%;
   padding: 3.375rem;
   position: relative;
-  width: 31.25rem;
+  width: var(--pomodoro-container-size);
 }
 
 .pomodoro-timer {
@@ -113,4 +105,35 @@ button {
 .pomodoro-config-button img {
   height: 100%;
   width: 100%;
+}
+
+.pomodoro-config-button img.hidden {
+  display: none;
+}
+
+/* Circular progress bar */
+.circle-container {
+  height: var(--circle-progress-size);
+  left: calc((var(--circle-distance-center) / 2) * -1);
+  position: absolute;
+  top: calc((var(--circle-distance-center) / 2) * -1);
+  transform: rotate(90deg);
+  width: var(--circle-progress-size);
+}
+
+.circle-container__background {
+  fill: none;
+  stroke: var(--black);
+  stroke-width: var(--circle-border-width);
+}
+
+.circle-container__progress {
+  fill: none;
+  stroke: var(--red);
+  stroke-dasharray: 100 100;
+  stroke-dashoffset: calc(100 - var(--progress));
+  stroke-linecap: square;
+  stroke-width: var(--circle-border-width);
+  transition: stroke-dashoffset 330ms ease-in-out;
+  will-change: transform;
 }

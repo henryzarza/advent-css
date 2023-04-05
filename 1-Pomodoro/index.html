@@ -14,16 +14,28 @@
   <body>
     <main class="main-content">
       <section class="pomodoro-container">
+        <!-- Circle progreess -->
+        <svg class="circle-container" viewBox="1 -1 30 34" xmlns="http://www.w3.org/2000/svg">
+          <circle class="circle-container__background" r="16" cx="16" cy="16"></circle>
+          <circle
+            class="circle-container__progress"
+            r="16"
+            cx="16"
+            cy="16"
+          ></circle>
+        </svg>
+
         <div class="pomodoro-inner-container">
           <div class="pomodoro-timer" id="timer-text" contenteditable="false">15:00</div>
           <button class="pomodoro-button" id="timer-button">start</button>
-          <button class="pomodoro-config-button">
-            <img src="./images/gear.svg" alt="Gear" />
+          <button class="pomodoro-config-button" id="edit-timer">
+            <img src="./images/gear.svg" alt="Gear" id="gear-icon" />
+            <img src="./images/check.svg" alt="Check" class="hidden" id="check-icon" />
           </button>
         </div>
       </section>
     </main>
 
-    <!-- <script src="./index.js"></script> -->
+    <script src="./index.js"></script>
   </body>
 </html>
