@@ -1,0 +1,68 @@
+/* Variables */
+:root {
+  --black: #000;
+  --white: #FFF;
+  --bg-color: #37B2C3;
+  --yellow: #ffd200;
+  --pink: #f40082;
+}
+/* End variables */
+
+* {
+  box-sizing: border-box;
+  color: var(--black);
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+body {
+  background: var(--bg-color);
+  padding: 1rem;
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  height: 100vh;
+}
+
+.black-key {
+  background-color: var(--white);
+  height: 420px;
+  transition: all 290ms ease-in;
+  width: 92px;
+}
+
+.black-key:hover,
+.black-key:active {
+  background-color: var(--yellow);
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.black-key:first-of-type,
+.black-key:last-of-type {
+  transform: matrix(-1, 0.2, 0.01, 1, 0, 0);
+}
+
+.black-key:nth-of-type(2),
+.black-key:nth-of-type(5) {
+  transform: matrix(0.983916, -0.326161, 0.0582965, 0.99891, 0, 0);
+}
+
+.black-key:nth-of-type(3),
+.black-key:nth-of-type(6) {
+  transform: matrix(0.8, 0.1, -0.05, 1, 0, 0);
+}
+
+.black-key:nth-of-type(4),
+.black-key:nth-of-type(8) {
+  transform: matrix(-1, -0.05, -0.1, 1, 0, 0);
+}
