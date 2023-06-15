@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Author: Henry Zarza, Illustrator: Advent of CSS challenge">
+  <title>🎄 Compressed.fm Episode Listing</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main class="main">
+    <img class="main__img" src="./images/podcast-cover.png" alt="Podcast cover" />
+    <div class="main__content">
+      <h2 class="main__title">LISTEN TO ALL THE COMPRESSED.FM EPISODES</h2>
+      <ul class="main__list">
+        <li class="main__list-item">
+          <input type="checkbox" name="episode" id="trailer">
+          <label for="trailer">1 | Trailer</label>
+        </li>
+        <li class="main__list-item">
+          <input type="checkbox" name="episode" id="episode2">
+          <label for="episode2">2 | James Q Quick Origin Story</label>
+        </li>
+        <li class="main__list-item">
+          <input type="checkbox" name="episode" id="episode3">
+          <label for="episode3">3 | Amy Dutton Origin Story</label>
+        </li>
+        <li class="main__list-item">
+          <input type="checkbox" name="episode" id="episode4">
+          <label for="episode4">4 | Starting a New Development Project</label>
+        </li>
+        <li class="main__list-item">
+          <input type="checkbox" name="episode" id="episode5">
+          <label for="episode5">5 | How do you Start a New Design Project?</label>
+        </li>
+        <li class="main__list-item">
+          <input type="checkbox" name="episode" id="episode6">
+          <label for="episode6">6 | Freelancing (Part 1)</label>
+        </li>
+      </ul>
+    </div>
+  </main>
+
+  <script>
+    document.querySelector('.main__img').addEventListener('click', () => {
+      document.querySelector('.main__content').classList.toggle('main__content--visible');
+    });
+  </script>
+
+</body>
+</html>
