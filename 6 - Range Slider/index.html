@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Author: Henry Zarza, Illustrator: Advent of CSS challenge">
+  <title>🎄 Range Slider</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.google.com/specimen/Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main class="main">
+    <h3 class="main__price">
+      <span class="main__price-symbol">$</span>
+      <span id="price-value">16.00</span>
+    </h3>
+    <input class="main__range" type="range" name="price" value="16" min="1" max="32" step="1">
+    <button class="main__button">buy now</button>
+  </main>
+
+  <script>
+    const inputRange = document.querySelector('.main__range');
+    const maxValue = Number(inputRange.getAttribute('max'));
+
+    inputRange.addEventListener('input', (event) => {
+      const { value } = event.target;
+      const percentage = (Number(value) / maxValue) * 100;
+
+      document.querySelector('#price-value').innerHTML = value;
+      inputRange.style.setProperty('--slider-percent', percentage);
+    });
+  </script>
+
+</body>
+</html>
