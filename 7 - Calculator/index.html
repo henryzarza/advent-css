@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Author: Henry Zarza, Illustrator: Advent of CSS challenge">
+  <title>🎄 Calculator</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main class="card">
+    <section class="card__item">
+      <h6 class="card__price-info">Tip Amount</h6>
+      <h2 class="card__price">
+        <span class="card__price-symbol">$</span>
+        <span id="tip-value">20.40</span>
+      </h2>
+    </section>
+    <section class="card__item">
+      <h6 class="card__price-info">Total Per Person</h6>
+      <h2 class="card__price">
+        <span class="card__price-symbol">$</span>
+        <span id="total-per-person-value">4.90</span>
+      </h2>
+    </section>
+    <section class="card__gray-container">
+      <div class="form-container">
+        <div class="form-element">
+          <div class="form-control">
+            <img class="input-icon" src="./src/dollar-symbol.svg" alt="Dollar symbol">
+            <input class="form-input" type="number" id="bill-amount" value="102.02">
+          </div>
+          <label for="bill-amount">Bill Amount</label>
+        </div>
+        <div class="form-element">
+          <div class="form-control">
+            <img class="input-icon" src="./src/group-icon.svg" alt="Group icon">
+            <input class="form-input" type="number" id="number-people" value="25">
+          </div>
+          <label for="number-people">Number of People</label>
+        </div>
+      </div>
+      <div class="card__radio-container">
+        <input type="radio" name="tipPercentage" id="tipPercentage5" value="5">
+        <label for="tipPercentage5">5%</label>
+        <input type="radio" name="tipPercentage" id="tipPercentage10" value="10">
+        <label for="tipPercentage10">10%</label>
+        <input type="radio" name="tipPercentage" id="tipPercentage15" value="15">
+        <label for="tipPercentage15">15%</label>
+        <input type="radio" name="tipPercentage" id="tipPercentage20" value="20" checked>
+        <label for="tipPercentage20">20%</label>
+      </div>
+      <div class="card__button-container">
+        <button class="card__button">Calculate</button>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    document.querySelector('.card__button').addEventListener('click', () => {
+      const billAmount = document.querySelector('#bill-amount').value;
+      const numberPeople = document.querySelector('#number-people').value;
+      const tipPercentage = document.querySelector('input[name="tipPercentage"]:checked').value;
+
+      if (typeof Number(billAmount) === "number" && typeof Number(numberPeople) === "number") {
+        const tipAmount = billAmount * (Number(tipPercentage) / 100);
+        const totalPerPerson = (Number(billAmount) + tipAmount) / Number(numberPeople);
+
+        document.querySelector('#tip-value').innerHTML = tipAmount.toFixed(2);
+        document.querySelector('#total-per-person-value').innerHTML = totalPerPerson.toFixed(2);
+      }
+    });
+  </script>
+
+</body>
+</html>
