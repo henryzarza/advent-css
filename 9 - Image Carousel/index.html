@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Author: Henry Zarza, Illustrator: Advent of CSS challenge">
+  <title>🎄 Image Carousel</title>
+
+  <link href="https://fonts.google.com/specimen/Roboto+Mono@400" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main class="carousel">
+    <figure class="carousel__main-image">
+      <img src="./images/sherman-yang-VBBGigIuaDY-unsplash.jpg" alt="" id="main-image">
+      <figcaption>
+        Photo by
+        <a id="author-link" target="_blank" href="https://unsplash.com/@emp_creative?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" class="carousel__author-link">Sherman Yang</a>
+        on <a target="_blank" href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" class="carousel__author-link">Unsplash</a>
+      </figcaption>
+    </figure>
+
+    <ul class="carousel__showcase" role="list">
+      <li class="carousel__showcase-item carousel__showcase-item--selected" data-author="Sherman Yang" data-link="https://unsplash.com/@emp_creative?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
+        <img src="./images/sherman-yang-VBBGigIuaDY-unsplash.jpg" alt="Photo by Sherman Yang">
+      </li>
+      <li class="carousel__showcase-item" data-author="Jakob Owens" data-link="https://unsplash.com/@jakobowens1?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
+        <img src="./images/jakob-owens-EwRM05V0VSI-unsplash.jpg" alt="Photo by Jakob Owens">
+      </li>
+      <li class="carousel__showcase-item" data-author="Dan Grinwis" data-link="https://unsplash.com/@finding_dan?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
+        <img src="./images/finding-dan-dan-grinwis-O35rT6OytRo-unsplash.jpg" alt="Photo by Dan Grinwis">
+      </li>
+      <li class="carousel__showcase-item" data-author="Vincentiu Solomon" data-link="https://unsplash.com/@vincentiu?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
+        <img src="./images/vincentiu-solomon-ln5drpv_ImI-unsplash.jpg" alt="Photo by Vincentiu Solomon">
+      </li>
+      <li class="carousel__showcase-item" data-author="Silas Baisch" data-link="https://unsplash.com/@silasbaisch?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
+        <img src="./images/silas-baisch-Wn4ulyzVoD4-unsplash.jpg" alt="Photo by Silas Baisch">
+      </li>
+      <li class="carousel__showcase-item" data-author="Dave Hoefler" data-link="https://unsplash.com/@davehoefler?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
+        <img src="./images/dave-hoefler-okUIdo6NxGo-unsplash.jpg" alt="Photo by Dave Hoefler">
+      </li>
+      <li class="carousel__showcase-item" data-author="Eugene Golovesov" data-link="https://unsplash.com/@eugene_golovesov?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
+        <img src="./images/eugene-golovesov-EXdXp7Z4X4w-unsplash.jpg" alt="Photo by Eugene Golovesov">
+      </li>
+      <li class="carousel__showcase-item" data-author="Jennifer Reynolds" data-link="https://unsplash.com/@jenreyn0lds?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
+        <img src="./images/jennifer-reynolds-_8HI5xf4TkE-unsplash.jpg" alt="Photo by Jennifer Reynolds">
+      </li>
+      <li class="carousel__showcase-item" data-author="Kellen Riggin" data-link="https://unsplash.com/@kalaniparker?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
+        <img src="./images/kellen-riggin-SIBOiXKg0Ds-unsplash.jpg" alt="Photo by Kellen Riggin">
+      </li>
+      <li class="carousel__showcase-item" data-author="Rafael Hoyos" data-link="https://unsplash.com/@rhweht?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
+        <img src="./images/rafael-hoyos-weht-zhkAp8DGkxw-unsplash.jpg" alt="Photo by Rafael Hoyos">
+      </li>
+      <li class="carousel__showcase-item" data-author="Sonya Romanovska" data-link="https://unsplash.com/@sonya_romanovska?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
+        <img src="./images/sonya-romanovska-wzdXhyi3AiM-unsplash.jpg" alt="Photo by Sonya Romanovska">
+      </li>
+    </ul>
+
+    <button type="button" class="carousel__button" id="prev-button">
+      <img src="./images/chevron.svg" alt="Chevron">
+    </button>
+    <button type="button" class="carousel__button" id="next-button">
+      <img src="./images/chevron.svg" alt="Chevron">
+    </button>
+  </main>
+
+  <script src="./index.js"></script>
+</body>
+</html>

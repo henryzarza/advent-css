@@ -1,0 +1,129 @@
+/* Variables */
+:root {
+  --black: #111;
+  --bg-color: #F6F6F3;
+  --pink: #FF00C7;
+}
+/* End variables */
+
+* {
+  box-sizing: border-box;
+  color: var(--black);
+  font-family: 'Roboto Mono', monospace;
+  margin: 0;
+  padding: 0;
+}
+
+.carousel {
+  background: var(--bg-color);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 28px;
+  position: relative;
+}
+
+.carousel__main-image {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  padding-bottom: 16px;
+}
+
+.carousel__main-image img {
+  object-fit: contain;
+  max-height: 615px;
+  max-width: 795px;
+  width: 100%;
+}
+
+.carousel__main-image figcaption {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21px;
+  margin-top: 10px;
+}
+
+.carousel__author-link {
+  color: var(--black);
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-style: dashed;
+  transition: color 270ms ease-in-out;
+}
+
+.carousel__author-link:hover {
+  color: var(--pink);
+}
+
+.carousel__showcase {
+  display: flex;
+  gap: 28px;
+  justify-content: space-between;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+}
+
+.carousel__showcase-item {
+  cursor: pointer;
+  height: 173px;
+  overflow: hidden;
+  min-width: 173px;
+  scroll-snap-align: start;
+}
+
+.carousel__showcase-item img {
+  height: 100%;
+  object-fit: cover;
+  transition: transform 270ms ease-in;
+  width: 100%;
+}
+
+.carousel__showcase-item:hover img,
+.carousel__showcase-item:focus img {
+  transform: scale(1.2);
+}
+
+.carousel__showcase-item--selected {
+  border: 10px solid var(--pink);
+}
+
+.carousel__button {
+  align-items: center;
+  background-color: var(--pink);
+  border: none;
+  bottom: 0;
+  cursor: pointer;
+  display: flex;
+  padding: 28px;
+  position: absolute;
+  opacity: 0.3;
+  top: 0;
+  transition: opacity 220ms ease-in-out;
+  width: 100px;
+}
+
+.carousel__button:hover,
+.carousel__button:focus {
+  opacity: 0.75;
+}
+
+.carousel__button:first-of-type {
+  left: 0;
+}
+
+.carousel__button:last-of-type {
+  right: 0;
+}
+
+.carousel__button:last-of-type img {
+  transform: rotate(180deg);
+}
+
+.carousel__button img {
+  width: 42px;
+}
+
