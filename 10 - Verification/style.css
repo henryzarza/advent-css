@@ -1,0 +1,140 @@
+/* Variables */
+:root {
+  --white: #FFF;
+  --bg-color: #E3E9F9;
+  --nobel: #737580;
+  --purple: #6778E8;
+  --white-lilac: #F0F3FA;
+}
+/* End variables */
+
+* {
+  box-sizing: border-box;
+  color: var(--nobel);
+  font-family: 'Source Sans 3', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  align-items: center;
+  background: var(--bg-color);
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+.card {
+  background-color: var(--white);
+  border-radius: 10px;
+  box-shadow: 0px 23px 44px 0px #CAD0E0;
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  padding: 4.4rem 2.1rem 1.93rem;
+  position: relative;
+  overflow: hidden;
+  width: 36rem;
+}
+
+.card__title {
+  align-self: center;
+  color: var(--purple);
+  font-size: 1.25rem;
+  font-weight: 900;
+  letter-spacing: 0.1375rem;
+  margin-bottom: 0.74rem;
+  text-transform: uppercase;
+}
+
+.card__subtitle {
+  align-self: center;
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin-bottom: 2.74rem;
+}
+
+.card__inputs-container {
+  display: flex;
+  justify-content: center;
+  gap: 1.31rem;
+  margin-bottom: 2.74rem;
+}
+
+.card__inputs-container input {
+  background-color: var(--white-lilac);
+  border-radius: 5px;
+  border: 1px solid transparent;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.05) inset;
+  color: var(--purple);
+  font-size: 3.73rem;
+  font-weight: 900;
+  height: 5.3rem;
+  letter-spacing: 0.4rem;
+  text-align: center;
+  padding: 0.5rem;
+  transition: border-color 220ms ease-in-out;
+  width: 5.3rem;
+}
+
+.card__inputs-container input:focus {
+  border-color: var(--purple);
+}
+
+.card__button {
+  background: linear-gradient(159deg, #8D9EFF 0%, #A674FB 100%);
+  border-radius: 10px;
+  border: none;
+  color: var(--white);
+  cursor: pointer;
+  font-size: 1.25rem;
+  font-weight: 900;
+  letter-spacing: 0.1375rem;
+  margin: 0 auto;
+  padding: 1.56rem;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  transition: all 270ms ease-in;
+  width: 100%;
+  will-change: width, height;
+}
+
+.card__button:hover {
+  transform: scale(1.02);
+}
+
+.card__button:active {
+  transform: scale(0.99);
+}
+
+/* Effect */
+.card__success-container {
+  align-items: center;
+  background-color: var(--white);
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  left: 0;
+  transition: transform 290ms ease-in-out;
+  top: 0;
+  transform: scale(0, 0);
+  transform-origin: bottom;
+  transition-delay: 1s;
+  position: absolute;
+  right: 0;
+}
+
+.card--validated .card__success-container {
+  transform: scale(1, 1);
+}
+
+.card--validated .card__button {
+  border-radius: 50%;
+  color: transparent;
+  height: 5rem;
+  text-shadow: none;
+  width: 5rem;
+}

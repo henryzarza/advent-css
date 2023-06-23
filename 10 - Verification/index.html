@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Author: Henry Zarza, Illustrator: Advent of CSS challenge">
+  <title>🎄 Verification</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main class="card">
+    <h1 class="card__title">Authorization CODE</h1>
+    <h6 class="card__subtitle">
+      Please enter the code that we sent to (***) *** - 2819.
+    </h6>
+    <div class="card__inputs-container">
+      <input type="text" maxlength="1" name="first" id="first" data-next="second">
+      <input type="text" maxlength="1" name="second" id="second" data-next="third">
+      <input type="text" maxlength="1" name="third" id="third" data-next="fourth">
+      <input type="text" maxlength="1" name="fourth" id="fourth">
+    </div>
+    <button type="button" class="card__button">Verify</button>
+
+    <div class="card__success-container">
+      <h3 class="card__title">
+        The code is correct
+      </h3>
+      <p class="card__subtitle">
+        You are going to be redirect in a moment...
+      </p>
+    </div>
+  </main>
+
+  <script>
+    document.querySelectorAll('.card__inputs-container input')
+      .forEach(input =>
+        input.addEventListener('input', (e) => {
+          if (input.dataset.next && e.target.value != '') {
+            document.getElementById(input.dataset.next).focus();
+          }
+        })
+      );
+    
+    document.querySelector('.card__button').addEventListener('click', () => {
+      document.querySelector('.card').classList.add('card--validated');
+    });
+  </script>
+
+</body>
+</html>
