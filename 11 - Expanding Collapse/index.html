@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Author: Henry Zarza, Illustrator: Advent of CSS challenge">
+  <title>🎄 Expanding Collapse</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main class="collapsible">
+    <section class="collapsible__container">
+      <header class="collapsible__header">
+        <span class="collapsible__question-icon">
+          <img src="./images/question-2.svg" alt="Question mark icon">
+        </span>
+        <h2 class="collapsible__title">
+          Technically, Svelte is a library and SvelteKit is a framework. What's the difference?
+        </h2>
+      </header>
+      <p class="collapsible__paragraph">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut. <br>
+        Voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+      <button class="collapsible__button"></button>
+    </section>
+    <section class="collapsible__container">
+      <header class="collapsible__header">
+        <span class="collapsible__question-icon">
+          <img src="./images/question.svg" alt="Question mark icon">
+        </span>
+        <h2 class="collapsible__title">
+          Do you provide a certificate of completion?
+        </h2>
+      </header>
+      <p class="collapsible__paragraph">
+        Voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+      <button class="collapsible__button"></button>
+    </section>
+    <section class="collapsible__container">
+      <header class="collapsible__header">
+        <span class="collapsible__question-icon">
+          <img src="./images/question-2.svg" alt="Question mark icon">
+        </span>
+        <h2 class="collapsible__title">
+          Can I use libraries / frameworks on these projects?
+        </h2>
+      </header>
+      <p class="collapsible__paragraph">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur nihil asperiores velit deserunt quaerat tempore labore, cum, similique neque corporis provident reprehenderit beatae quasi. Nulla porro libero eligendi dolore error? <br>
+        Eos, nihil sint optio odio iure, atque rem veniam quam numquam fugit minus illo quae! Sed earum in iste dolorum dicta provident ea, autem reiciendis dolores natus rerum quo. Eveniet. <br>
+        Reprehenderit reiciendis iste esse dolorem sapiente perferendis facere voluptatum vel, perspiciatis, error impedit nostrum voluptas magni! Neque odit excepturi incidunt itaque alias, corrupti, in dolores labore voluptate quasi maxime nam!
+      </p>
+      <button class="collapsible__button"></button>
+    </section>
+  </main>
+
+  <script>
+    document.querySelectorAll('.collapsible__button')
+      .forEach(button => 
+        button.addEventListener('click', function() {
+          this.parentElement.classList.toggle('collapsed');
+          const paragraph = this.parentElement.querySelector('.collapsible__paragraph');
+
+          if (paragraph.style.maxHeight){
+            paragraph.style.maxHeight = null;
+          } else {
+            paragraph.style.maxHeight = paragraph.scrollHeight + "px";
+          }
+        })
+      );
+  </script>
+
+</body>
+</html>

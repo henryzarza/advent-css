@@ -1,0 +1,134 @@
+/* Variables */
+:root {
+  --black: #000;
+  --white: #FFF;
+  --answer-bg-color-collapsed: #FFDD00;
+  --answer-bg-color: #F0F0F0;
+}
+/* End variables */
+
+* {
+  box-sizing: border-box;
+  color: var(--black);
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  align-items: center;
+  background: var(--white);
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 5rem 1rem 2rem;
+}
+
+.collapsible {
+  max-width: 100%;
+  width: 59.57rem;
+}
+
+.collapsible__container {
+  background-color: var(--answer-bg-color);
+  margin-bottom: 5rem;
+  position: relative;
+  transition: background-color 100ms ease-in-out;
+  width: 100%;
+}
+
+.collapsible__container:last-of-type {
+  margin-bottom: 0;
+}
+
+.collapsible__header {
+  background-color: var(--white);
+  border: 5px solid var(--black);
+  display: flex;
+  position: relative;
+  right: 3.44rem;
+  top: -1.5rem;
+}
+
+.collapsible__title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 2rem;
+  padding: 1.6rem 2.4rem 1.36rem 1.55rem;
+}
+
+.collapsible__question-icon {
+  background-color: var(--black);
+  min-width: 6.375rem;
+  position: relative;
+}
+
+.collapsible__question-icon img {
+  left: 0.9rem;
+  position: absolute;
+  top: -2rem;
+  width: 4.375rem;
+}
+
+.collapsible__paragraph {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 2.69rem;
+  padding: 0 5.31rem 0 4.42rem;
+
+
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 220ms ease-out;
+  will-change: max-height;
+}
+
+.collapsible__button {
+  border: none;
+  background-color: transparent;
+  color: var(--black);
+  cursor: pointer;
+  height: 1.5rem;
+  position: absolute;
+  right: 1rem;
+  top: 1.29rem;
+  width: 1.5rem;
+}
+
+.collapsible__button:hover {
+  color: var(--white);
+}
+
+.collapsible__button::after,
+.collapsible__button::before {
+  background-color: currentColor;
+  content: '';
+  height: 0.3rem;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: all 290ms ease-in-out;
+}
+
+.collapsible__button::after {
+  transform: translate(-3px, 5px) rotatez(45deg) scaleX(0.6);
+}
+
+.collapsible__button::before {
+  transform: translate(4px, 5px) rotatez(-45deg) scaleX(0.6);
+}
+
+/* Collapsed state */
+.collapsed .collapsible__button::after {
+  transform: translateY(9px) rotatez(45deg);
+}
+
+.collapsed .collapsible__button::before {
+  transform: translateY(9px) rotatez(-45deg);
+}
+
+.collapsed.collapsible__container {
+  background-color: var(--answer-bg-color-collapsed);
+  padding-bottom: 3.47rem;
+}
