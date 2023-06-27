@@ -1,0 +1,200 @@
+/* Variables */
+:root {
+  --black: #000;
+  --white: #FFF;
+  --yellow-gold: #FFB800;
+  --blue: #00F0FF;
+}
+/* End variables */
+
+* {
+  box-sizing: border-box;
+  color: var(--black);
+  font-family: 'Roboto Mono', monospace;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow: hidden;
+}
+
+.pick-section {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 4.73rem;
+}
+
+.buttons-container {
+  display: flex;
+  gap: 4.7rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 5rem;
+}
+
+.pick-button {
+  display: none;
+}
+
+.pick-button + label {
+  align-items: center;
+  border: 2px solid var(--black);
+  cursor: pointer;
+  display: flex;
+  height: 22.1875rem;
+  flex: 0 1 19.70931rem;
+  flex-direction: column;
+  font-size: 1.25rem;
+  font-weight: 700;
+  padding: 1.88rem 1.6rem;
+  transition: all 270ms ease-in-out;
+  width: 100%;
+}
+
+.pick-button + label > img {
+  flex: 1;
+  margin-bottom: 1rem;
+  object-fit: contain;
+  width: 100%;
+}
+
+.pick-button[value="rock"] + label > img {
+  width: 12rem;
+}
+
+.pick-button:checked + label,
+.pick-button + label:hover {
+  border-width: 10px;
+  border-color: var(--yellow-gold);
+}
+
+.main-button {
+  border: 2px solid var(--black);
+  background: none;
+  cursor: pointer;
+  font-size: 2rem;
+  font-weight: 700;
+  max-width: 23.75rem;
+  padding: 0.9375rem;
+  text-align: center;
+  transition: all 290ms ease-in-out;
+  width: 100%;
+}
+
+.main-button:is(:hover, :focus) {
+  background-color: var(--yellow-gold);
+}
+
+.main-button:active {
+  transform: scale(0.98);
+}
+
+/* Result section */
+.result-section {
+  background-color: var(--white);
+  bottom: 0;
+  display: flex;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translateY(100%);
+  transition: transform 270ms ease-in;
+}
+
+.result-section--visible {
+  transform: translateY(0);
+}
+
+.result-section::before {
+  bottom: 0;
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+/* result states */
+.result-section[data-win="user"]::before {
+  background-color: var(--yellow-gold);
+  left: 0;
+  transform: skewX(25deg) translateX(-45%);
+}
+
+.result-section[data-win="user"] .result-choice:last-of-type > .title {
+  visibility: hidden;
+}
+
+.result-section[data-win="computer"]::before {
+  background-color: var(--blue);
+  right: 0;
+  transform: skewX(-25deg) translateX(45%);
+}
+
+.result-section[data-win="computer"] .result-choice:first-of-type > .title {
+  visibility: hidden;
+}
+
+.title--big {
+  display: none;
+  left: 0;
+  position: absolute;
+  text-align: center;
+  top: 5rem;
+  right: 0;
+}
+
+.result-section[data-win="tie"] .result-choice > .title {
+  display: none;
+}
+
+.result-section[data-win="tie"] .title--big {
+  display: block;
+}
+/* result states */
+
+.result-choice {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 1;
+}
+
+.result-choice > .title {
+  margin-bottom: 6.36rem;
+}
+
+.result-choice > img {
+  object-fit: contain;
+  height: 23.26rem;
+  width: 23.26rem;
+}
+
+.result-choice:last-of-type > img {
+  transform: rotateY(180deg);
+}
+
+.result-section .main-button {
+  bottom: 5rem;
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  z-index: 1;
+}
+
+.result-section .main-button:is(:hover, :active) {
+  background-color: var(--black);
+  color: var(--white);
+}

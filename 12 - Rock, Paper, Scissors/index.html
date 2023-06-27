@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Author: Henry Zarza, Illustrator: Advent of CSS challenge">
+  <title>🎄 Rock, Paper, and Scissors</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <!-- Pick section -->
+  <section class="pick-section">
+    <h2 class="title">pick one</h2>
+    <div class="buttons-container">
+      <input class="pick-button" type="radio" name="option" value="rock" id="rock">
+      <label for="rock">
+        <img src="./images/rock.png" alt="Rock">
+        rock
+      </label>
+      <input class="pick-button" type="radio" name="option" value="paper" id="paper">
+      <label for="paper">
+        <img src="./images/paper.png" alt="Paper">
+        paper
+      </label>
+      <input class="pick-button" type="radio" name="option" value="scissors" id="scissors">
+      <label for="scissors">
+        <img src="./images/scissors.png" alt="Scissors">
+        scissors
+      </label>
+    </div>
+    <button class="main-button" id="btn-play">let's play</button>
+  </section>
+
+  <!-- Result section -->
+  <section class="result-section">
+    <div class="result-choice">
+      <h2 class="title">you win</h2>
+      <img src="./images/rock.png" alt="" id="user-choice-img">
+    </div>
+    <div class="result-choice">
+      <h2 class="title">computer wins</h2>
+      <img src="./images/paper.png" alt="Paper" id="computer-choice-img">
+    </div>
+    <button class="main-button" id="btn-play-again">play again?</button>
+    <h2 class="title title--big">it's a tie!</h2>
+  </section>
+
+  <script src="./index.js"></script>
+
+</body>
+</html>
