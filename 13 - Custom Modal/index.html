@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Author: Henry Zarza, Illustrator: Advent of CSS challenge">
+  <title>🎄 Custom Modal</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto:wght@400;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <button class="dot-button"></button>
+  <button class="dot-button"></button>
+  <button class="dot-button"></button>
+  <button class="dot-button"></button>
+  <button class="dot-button"></button>
+  <button class="dot-button"></button>
+  <button class="dot-button"></button>
+  <button class="dot-button"></button>
+  <button class="dot-button"></button>
+  <button class="dot-button"></button>
+  <button class="dot-button"></button>
+  <button class="dot-button"></button>
+  <button class="dot-button"></button>
+  <button class="dot-button"></button>
+  <button class="dot-button"></button>
+  <button class="dot-button"></button>
+  <button class="dot-button"></button>
+  <button class="dot-button"></button>
+  <button class="dot-button"></button>
+  <button class="dot-button"></button>
+
+  <!-- Modal -->
+  <div class="modal__backdrop">
+    <div
+      role="alertdialog"
+      aria-modal="true"
+      aria-labelledby="modal_title"
+      aria-describedby="modal_desc"
+      class="modal"
+    >
+      <div class="modal__left-content">
+        <h2 class="modal__title" id="modal_title">Elgato Key Light</h2>
+        <p class="modal__description" id="modal_desc">These lights are great if you shoot video at your desk.
+          <br>My desk is pushed up against the wall, so I didn't have room for a large soft box. These lights still deliver on the look that I wanted. Plus, it comes with a desktop app where you can adjust the brightness and temperature.</p>
+        <button type="button" class="modal__main-button">BUY NOW for $169.99</button>
+      </div>
+      <div class="modal__right-content">
+        <img src="./images/elgato-key-light.png" alt="elgato key light">
+      </div>
+      <button type="button" class="modal__close-button">
+        <img src="./images/+.svg" alt="Times icon">
+      </button>
+    </div>
+  </div>
+
+  <script>
+    const modalRef = document.querySelector('.modal__backdrop');
+
+    document.querySelectorAll('.dot-button')
+      .forEach(button => 
+        button.addEventListener('click', function() {
+          modalRef.style.transformOrigin = `${this.offsetLeft}px ${this.offsetTop}px`;
+          modalRef.classList.add('modal__backdrop--visible');
+        })
+      );
+    
+    document.querySelector('.modal__close-button').addEventListener('click', () => {
+      modalRef.classList.remove('modal__backdrop--visible');
+    });
+  </script>
+
+</body>
+</html>
