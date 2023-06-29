@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Author: Henry Zarza, Illustrator: Advent of CSS challenge">
+  <title>🎄 Calendar</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <section class="calendar">
+    <header class="calendar__header">
+      <button class="calendar__header-button" id="previous">
+        <svg aria-label="Previous month" width="23" height="35" viewBox="0 0 23 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17.1119 34.4854L0.150391 17.5319L17.1119 0.582153L22.5454 6.0119L11.0174 17.5319L22.5454 29.0518L17.1119 34.4854Z" />
+        </svg>
+      </button>
+      <h2 class="calendar__header-title"></h2>
+      <button class="calendar__header-button" id="next">
+        <svg aria-label="Next month" width="23" height="35" viewBox="0 0 23 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5.88191 34.4854L0.448395 29.0518L11.9764 17.5319L0.448395 6.0119L5.88191 0.582153L22.8434 17.5319L5.88191 34.4854Z" />
+        </svg>
+      </button>
+    </header>
+    <div class="calendar__dates"></div>
+  </section>
+
+  <script src="./index.js"></script>
+</body>
+</html>

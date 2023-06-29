@@ -1,0 +1,98 @@
+/* Variables */
+:root {
+  --black: #000;
+  --bg-color: #FBFBFB;
+  --pink: #F40082;
+  --yellow: #FFD200;
+  --white: #FFF;
+  --purple: #3452a5;
+}
+/* End variables */
+
+* {
+  box-sizing: border-box;
+  color: var(--black);
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  align-items: center;
+  background-color: var(--bg-color);
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+.calendar {
+  background-color: var(--white);
+  border-radius: 24px;
+  box-shadow: 0px 2px 40px 0px rgba(0, 0, 0, 0.25);
+  min-height: 38.4rem;
+  padding: 3.12rem 6rem 5.12rem;
+  width: 41.3rem;
+}
+
+.calendar__header {
+  align-items: center;
+  display: flex;
+  margin-bottom: 3rem;
+}
+
+.calendar__header-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  height: 2rem;
+  width: 1.4rem;
+}
+
+.calendar__header-button svg path {
+  fill: var(--pink);
+  transition: fill 290ms ease-in;
+}
+
+.calendar__header-button:hover svg path {
+  fill: var(--purple);
+}
+
+.calendar__header-title {
+  flex: 1;
+  font-family: 'Oswald', sans-serif;
+  font-size: 2rem;
+  padding: 0 0.5rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.calendar__dates {
+  display: grid;
+  gap: 1.5rem 1rem;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.calendar__date-name {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.calendar__date-number {
+  background-color: var(--white);
+  font-size: 2rem;
+  padding: 0.4rem 0.5rem;
+  text-align: center;
+  transition: all 290ms ease-in-out;
+}
+
+.calendar__date-number:hover {
+  background-color: var(--purple);
+  color: var(--white);
+}
+
+.calendar__date-number--selected {
+  background-color: var(--yellow);
+  border-radius: 50%;
+}
