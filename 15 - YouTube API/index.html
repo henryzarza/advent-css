@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Author: Henry Zarza, Illustrator: Advent of CSS challenge">
+  <title>🎄 YouTube API</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css" />
+
+  <!-- Load YouTube API -->
+  <script src="https://apis.google.com/js/api.js"></script>
+</head>
+<body>
+  <main class="container">
+    <a class="main-link" href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">
+      <img src="./images/logo.png" alt="YouTube logo">
+    </a>
+    <div class="content">
+      <section class="main-video">
+        <img class="main-video__video" src="./images/placeholder.png" alt="">
+        <h2 class="main-video__title">-</h2>
+        <h3 class="main-video__subtitle">-</h3>
+        <h6 class="main-video__published">-</h6>
+        <p class="main-video__description">-</p>
+      </section>
+      <section class="suggested-videos" role="listbox"></section>
+    </div>
+  </main>
+
+  <script src="./index.js"></script>
+
+</body>
+</html>
