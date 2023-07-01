@@ -1,0 +1,46 @@
+/* Variables */
+:root {
+  --white: #FFF;
+  --yellow: #FFD200;
+  --gray: #808080;
+}
+/* End variables */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+.section {
+  display: flex;
+  gap: 3rem;
+}
+
+.star {
+  cursor: pointer;
+  height: 9.4rem;
+  width: 9.4rem;
+}
+
+.star__border {
+  fill: var(--gray);
+}
+
+.star__fill {
+  fill: var(--yellow);
+  opacity: 0;
+  transition: opacity 290ms ease-in-out;
+}
+
+.star--filled .star__fill {
+  opacity: 1;
+}
