@@ -1,0 +1,166 @@
+/* Variables */
+:root {
+  --black: #000;
+  --white: #FFF;
+  --gray: #D4D4D4;
+  --blue: #1400FF;
+  --red: #F00;
+}
+/* End variables */
+
+* {
+  box-sizing: border-box;
+  color: var(--black);
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 28.35rem;
+  width: 100%;
+}
+
+.form__title {
+  font-size: 3.51rem;
+  font-weight: 800;
+  letter-spacing: -0.0351rem;
+  line-height: normal;
+}
+
+.form__element {
+  position: relative;
+}
+
+.form__element input {
+  border: 2px solid var(--gray);
+  border-radius: 0.25rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: -0.015rem;
+  line-height: normal;
+  padding: 1.12rem 1.18rem 1rem;
+  transition: border-color 290ms ease-in-out;
+  width: 100%;
+}
+
+.form__element input:focus {
+  border-color: var(--blue);
+}
+
+.form__element label {
+  background-color: var(--white);
+  color: var(--blue);
+  font-size: 1.5rem;
+  font-weight: 500;
+  left: 1.18rem;
+  letter-spacing: -0.01rem;
+  line-height: normal;
+  padding-left: 0.35rem;
+  padding-right: 1rem;
+  position: absolute;
+  top: 0;
+  transform: translateY(1.15rem);
+  transition: transform 290ms ease-in-out;
+}
+
+.form__element input:focus + label,
+.form__element--valid input + label,
+.form__element--error input + label {
+  transform: translateY(-1rem) scale(0.75);
+}
+
+.form__button {
+  background-color: var(--blue);
+  border: 1px solid var(--blue);
+  border-radius: 0.25rem;
+  color: var(--white);
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.015rem;
+  line-height: normal;
+  padding: 1.06rem;
+  transition: all 290ms ease-in-out;
+}
+
+.form__button:is(:hover, :focus) {
+  background-color: var(--white);
+  color: var(--blue);
+}
+
+.form__validation-message {
+  align-items: center;
+  color: var(--red);
+  display: flex;
+  font-size: 1rem;
+  font-weight: 500;
+  gap: 0.44rem;
+  line-height: normal;
+  letter-spacing: -0.01rem;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  right: -1rem;
+  top: 1.2rem;
+  transform: translateX(120%);
+  transition: all 290ms ease-in;
+}
+
+.form__validation-message span {
+  color: inherit;
+  opacity: 0;
+}
+
+.form__icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  height: 2rem;
+  position: absolute;
+  right: 0.5rem;
+  top: 1.2rem;
+  width: 2rem;
+}
+
+.form__icon img {
+  width: 100%;
+}
+
+.form__icon:hover img {
+  filter: brightness(0.2);
+}
+
+.form__icon + input {
+  padding-right: 3rem;
+}
+
+/* Effects */
+.form__element--error input {
+  border-color: var(--red);
+}
+
+.form__element--error input + label {
+  color: var(--red);
+}
+
+.form__element--error .form__validation-message span {
+  opacity: 1;
+}
+
+.form__element--error .form__validation-message,
+.form__element--valid .form__validation-message {
+  opacity: 1;
+  transform: translateX(100%);
+}

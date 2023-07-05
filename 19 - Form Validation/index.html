@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Author: Henry Zarza, Illustrator: Advent of CSS challenge">
+  <title>19 - Form Validation</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <form class="form" id="form">
+    <h1 class="form__title">Signup</h1>
+    <div class="form__element">
+      <input type="text" id="name" name="name">
+      <label for="name">Name</label>
+      <p class="form__validation-message">
+        <img src="./images/error.svg" alt="error">
+        <span>This is not a valid name</span>
+      </p>
+    </div>
+    <div class="form__element">
+      <input type="text" id="email" name="email">
+      <label for="email">Email</label>
+      <p class="form__validation-message">
+        <img src="./images/error.svg" alt="error">
+        <span>This is not a valid email address</span>
+      </p>
+    </div>
+    <div class="form__element">
+      <button type="button" class="form__icon">
+        <img src="./images/show.svg" alt="show">
+      </button>
+      <input type="password" id="password" name="password">
+      <label for="password">Password</label>
+      <p class="form__validation-message">
+        <img src="./images/error.svg" alt="error">
+        <span>This is not a valid password</span>
+      </p>
+    </div>
+    <div class="form__element">
+      <button type="button" class="form__icon">
+        <img src="./images/show.svg" alt="show">
+      </button>
+      <input type="password" id="confirmPassword" name="confirmPassword">
+      <label for="confirmPassword">Confirm Password</label>
+      <p class="form__validation-message">
+        <img src="./images/error.svg" alt="error">
+        <span>This does not macth with password field</span>
+      </p>
+    </div>
+    <button type="submit" class="form__button">Submit</button>
+  </form>
+
+  <script src="./index.js"></script>
+
+</body>
+</html>
