@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Author: Henry Zarza, Illustrator: Advent of CSS challenge">
+  <title>18 - Password Generator</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <section class="container">
+    <div class="input-container">
+      <input type="text" name="password">
+      <svg id="copyText" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M37.3147 2.83081H20.6332C18.1514 2.83081 16.1332 4.85131 16.1332 7.33081V38.8308C16.1332 41.3126 18.1514 43.3308 20.6332 43.3308H43.1332C45.6149 43.3308 47.6332 41.3126 47.6332 38.8308V13.1493L37.3147 2.83081ZM43.1354 38.8308H20.6332V7.33081H34.1332V16.3308H43.1332L43.1354 38.8308Z" />
+        <path d="M11.6332 11.8308H7.13318V47.8308C7.13318 50.3126 9.15143 52.3308 11.6332 52.3308H38.6332V47.8308H11.6332V11.8308Z" />
+      </svg>
+      <span class="text-copied">Copied</span>
+    </div>
+
+    <div class="input-range__container">
+      <input class="input-range" type="range" name="characters" value="12" min="6" max="32" step="1">
+      <h6 class="character-info">12 characters</h6>
+    </div>
+
+    <fieldset class="checkboxes-container">
+      <input type="checkbox" id="symbols" name="includeCheckbox" value="symbols">
+      <label for="symbols">
+        Include Symbols <span>(@#1%)</span>
+      </label>
+
+      <input type="checkbox" id="numbers" name="includeCheckbox" value="numbers">
+      <label for="numbers">
+        Include Numbers <span>(1234)</span>
+      </label>
+
+      <input type="checkbox" id="lowercase" name="includeCheckbox" value="lowercase">
+      <label for="lowercase">
+        Include Lowercase Characters <span>(abcd)</span>
+      </label>
+
+      <input type="checkbox" id="uppercase" name="includeCheckbox" value="uppercase">
+      <label for="uppercase">
+        Include Uppercase Characters <span>(ABCD)</span>
+      </label>
+
+      <input type="checkbox" id="similar" name="includeCheckbox" value="similar">
+      <label for="similar">
+        Exclude Similar Characters <span>(i, l, 1, L, o, 0, O)</span>
+      </label>
+    </fieldset>
+  </section>
+
+  <script src="./index.js"></script>
+
+</body>
+</html>
