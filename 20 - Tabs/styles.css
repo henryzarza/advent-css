@@ -1,0 +1,135 @@
+/* Variables */
+:root {
+  --black: #000;
+  --white: #FFF;
+  --yellow: #FBFF00;
+}
+/* End variables */
+
+* {
+  box-sizing: border-box;
+  color: var(--white);
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--black);
+  display: flex;
+  min-height: 100vh;
+}
+
+.aside {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 31.31rem;
+  padding: 3.38rem 3.55rem 1rem 4.44rem;
+  position: relative;
+  width: 100%;
+}
+
+.aside__logo {
+  height: 6.5rem;
+  margin-bottom: 6.32rem;
+  width: 21.02rem;
+}
+
+.aside__list {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+.aside__list li {
+  cursor: pointer;
+}
+
+.aside__episode-number {
+  color: var(--yellow);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.105rem;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.aside__episode-name {
+  font-size: 1.47rem;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.aside__list li:hover .aside__episode-name {
+  text-decoration: underline;
+}
+
+.aside__indicator {
+  background-color: var(--black);
+  border: 4px solid var(--yellow);
+  border-bottom: none;
+  border-left: none;
+  height: 2.24rem;
+  position: absolute;
+  right: -1.25rem;
+  top: 17.5rem;
+  transform: rotate(45deg);
+  transition: top 270ms ease-in;
+  will-change: top;
+  width: 2.24rem;
+}
+
+
+.main {
+  border-left: 4px solid var(--yellow);
+  display: flex;
+  flex: 1;
+  gap: 2.48rem;
+  padding: 10.22rem 4.33rem 2rem;
+}
+
+.main__img {
+  border: 1px solid var(--white);
+  height: 15.9375rem;
+  width: 15.9375rem;
+}
+
+.main__section-title {
+  font-size: 2.75rem;
+  font-weight: 900;
+  line-height: 3.125rem;
+  margin-bottom: 1.58rem;
+}
+
+.main__section-description {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 2.375rem;
+  margin-bottom: 0.46rem;
+}
+
+.main__section-link {
+  align-items: center;
+  color: var(--yellow);
+  cursor: pointer;
+  display: flex;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.16rem;
+  line-height: 2.375rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 270ms ease-in;
+}
+
+.main__section-link img {
+  height: 2rem;
+  width: 2rem;
+}
+
+.main__section-link:hover {
+  color: var(--white);
+  text-decoration: underline;
+}
