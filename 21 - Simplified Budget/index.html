@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Author: Henry Zarza, Illustrator: Advent of CSS challenge">
+  <title>21 - Simplified Budget</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main class="main">
+    <section class="section">
+      <div class="section__inner">
+        <h2 class="section-title">Simpified Budget</h2>
+        <div class="section__input-container">
+          <label for="budgetAmount">Budget Amount</label>
+          <span>$</span>
+          <input type="number" id="budgetAmount">
+        </div>
+        <div class="section__expenses-info">
+          <div class="section__input-container no--addon">
+            <label for="inputExpense">Expense</label>
+            <input type="text" id="inputExpense">
+          </div>
+          <div class="section__input-container">
+            <label for="amount">Amount</label>
+            <span>$</span>
+            <input type="number" id="amount">
+          </div>
+          <button type="button" class="section__add">
+            <img src="./images/plus.svg" alt="Plus">
+          </button>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="section__inner section__inner--table">
+        <h3 class="section__subtitle">Expenses</h3>
+        <table class="table">
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="footer__item">
+      <p class="footer__item-description">Income</p>
+      <h3 class="footer__item-value" id="income">$00.00</h3>
+    </div>
+    <div class="footer__item">
+      <p class="footer__item-description">Expenses</p>
+      <h3 class="footer__item-value" id="expenses">$00.00</h3>
+    </div>
+    <div class="footer__item">
+      <p class="footer__item-description">Balance</p>
+      <h3 class="footer__item-value" id="balance">$00.00</h3>
+    </div>
+  </footer>
+
+  <script src="./index.js"></script>
+
+</body>
+</html>
