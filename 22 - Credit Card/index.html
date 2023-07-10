@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Author: Henry Zarza, Illustrator: Advent of CSS challenge">
+  <title>22 - Credit Card</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Beth+Ellen&family=Courier+Prime:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <section class="section">
+    <div class="section__img-container">
+      <figure class="section__img">
+        <img id="cover-front" src="./images/cc__visa--front.png" alt="Visa front">
+        <h5 class="card-number"></h5>
+        <h6 class="card-expiration"></h6>
+        <h6 class="card-name"></h6>
+      </figure>
+      <figure class="section__img section__img--back">
+        <img id="cover-back" src="./images/cc__visa--back.png" alt="Visa back">
+        <h5 class="card-signature"></h5>
+        <h6 class="card-cvv"></h6>
+      </figure>
+    </div>
+    <div class="section__first-container">
+      <div class="section__input-container">
+        <label for="cardNumber">Card Number</label>
+        <input type="number" id="cardNumber">
+      </div>
+      <div class="section__input-container">
+        <label for="cardName">Card Name</label>
+        <input type="text" id="cardName" maxlength="25">
+      </div>
+    </div>
+    <div class="section__second-container">
+      <div class="section__input-container">
+        <label for="expirationDate">Expiration Date</label>
+        <select name="expirationDate" id="expirationDate"></select>
+      </div>
+      <div class="section__input-container">
+        <select name="expirationYear" id="expirationYear"></select>
+      </div>
+      <div class="section__input-container">
+        <label for="cvv">CVV</label>
+        <input type="number" id="cvv">
+      </div>
+    </div>
+    <button type="button" class="section__main-button">
+      Update
+    </button>
+  </section>
+
+  <script src="./index.js"></script>
+
+</body>
+</html>

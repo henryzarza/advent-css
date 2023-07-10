@@ -1,0 +1,205 @@
+/* Variables */
+:root {
+  --champage: #FBE6DB;
+  --white: #FFF;
+  --claret: #7D193E;
+  --black: #000;
+  --alto: #E0E0E0;
+  --corn-flower-blue: #4C79F6;
+}
+/* End variables */
+
+* {
+  box-sizing: border-box;
+  color: var(--black);
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  align-items: center;
+  background-color: var(--champage);
+  display: flex;
+  min-height: 100vh;
+  padding-top: 4rem;
+}
+
+.section {
+  background-color: var(--white);
+  border-radius: 1.875rem;
+  box-shadow: 0px 0px 95px 0px #F5C7BD, 0px 9px 24px 0px rgba(0, 0, 0, 0.25);
+  margin: 0 auto;
+  max-width: 55.82rem;
+  padding: 13.5rem 4.32rem 3.96rem 3.87rem;
+  position: relative;
+  width: 100%;
+}
+
+.section__first-container {
+  display: flex;
+  gap: 2.19rem;
+}
+
+.section__input-container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.section__input-container input,
+.section__input-container select {
+  background-color: var(--white);
+  border: 2px solid var(--alto);
+  border-radius: 0.25rem;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: normal;
+  padding: 1.32rem 1.71rem;
+  transition: border-color 270ms ease-in;
+  width: 100%;
+}
+
+.section__input-container input:focus,
+.section__input-container select:focus {
+  border-color: var(--corn-flower-blue);
+}
+
+.section__input-container label {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 0.47rem;
+}
+
+.section__second-container {
+  align-items: end;
+  display: flex;
+  gap: 1.27rem;
+}
+
+.section__second-container .section__input-container:last-of-type {
+  margin-left: 2.17rem;
+}
+
+.section__main-button {
+  background-color: var(--claret);
+  border: 1px solid var(--claret);
+  border-radius: 0.75rem;
+  color: var(--white);
+  cursor: pointer;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: normal;
+  padding: 1.5rem 0.625rem;
+  transition: all 270ms ease-in;
+  width: 100%;
+}
+
+.section__main-button:is(:hover, :focus) {
+  background-color: var(--white);
+  color: var(--claret);
+}
+
+.section__main-button:active {
+  transform: scale(0.95);
+}
+
+.section__img-container {
+  height: 25.896rem;
+  left: 0;
+  margin: 0 auto;
+  right: 0;
+  top: -11.5rem;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 720ms ease-in-out;
+  width: 41.82rem;
+}
+
+.section__img {
+  backface-visibility: hidden;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.section__img img {
+  width: 100%;
+}
+
+.section__img--back {
+  transform: rotateY(180deg);
+}
+
+.section__img-container--flipped {
+  transform: rotateY(180deg);
+}
+
+.card-number,
+.card-expiration,
+.card-name {
+  font-family: 'Courier Prime', monospace;
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: normal;
+  position: absolute;
+  text-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.65);
+}
+
+/* Text color gradient */
+.card-number,
+.card-expiration {
+  background: linear-gradient(#FFF, #DBDBDB, #FFF, #BCCBD9, #FFF);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-text-fill-color: transparent;
+}
+
+.card-expiration,
+.card-name {
+  font-size: 1.875rem;
+}
+
+.card-number {
+  left: 7.3rem;
+  top: 47%;
+}
+
+.card-expiration {
+  bottom: 30%;
+  right: 28%;
+}
+
+.card-name {
+  bottom: 20%;
+  color: var(--white);
+  left: 7.3rem;
+  text-transform: uppercase;
+}
+
+.card-cvv {
+  font-family: 'Courier Prime', monospace;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: normal;
+  position: absolute;
+  right: 16%;
+  top: 42%;
+}
+
+.card-signature {
+  font-family: 'Beth Ellen', cursive;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: normal;
+  left: 16%;
+  position: absolute;
+  text-transform: capitalize;
+  top: 35%;
+}
