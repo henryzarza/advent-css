@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Author: Henry Zarza, Illustrator: Advent of CSS challenge">
+  <title>23 - Toaster</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <img class="main__img" src="./images/cover.jpg" alt="Compressed.fm cover">
+
+  <!-- Toaster -->
+  <div
+    role="alertdialog"
+    aria-modal="true"
+    aria-labelledby="toaster_title"
+    aria-describedby="toaster_description"
+    class="toaster"
+  >
+    <button class="toaster__close-btn" aria-label="Close toaster">
+      <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M24.7556 2.71856L22.8056 0.769897L12.7563 10.8205L2.70566 0.769897L0.755615 2.71856L10.8063 12.7692L0.755615 22.8198L2.70566 24.7685L12.7563 14.7179L22.8056 24.7685L24.7556 22.8198L14.705 12.7692L24.7556 2.71856Z" fill="inherit"/>
+      </svg>
+      close
+    </button>
+    <h2 class="toaster__title" id="toaster_title">
+      GET FREE STUFF IN YOUR INBOX
+    </h2>
+    <p class="toaster__description" id="toaster_description">
+      We try to include additional information and companion resources with each podcast episode. Sign up now to be included in the fun.
+    </p>
+    <label class="toaster__label" for="email">Email Address</label>
+    <div class="toaster__input-container">
+      <input type="text" id="email" autocomplete="off">
+      <button type="button" aria-label="Right arrow">
+        <svg width="54" height="33" viewBox="0 0 54 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M37.1391 0.348663L32.3387 5.15585L40.1368 12.937H0.789795V19.7268H40.1096L32.3353 27.5147L37.1424 32.3117L53.1189 16.3013L37.1391 0.348663Z" fill="inherit"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <script>
+    document.querySelector('.main__img').addEventListener('click', function() {
+      const toasterRef = document.querySelector('.toaster');
+      const { top, right } = this.getBoundingClientRect();
+
+      toasterRef.style.setProperty('top', `${top}px`);
+      toasterRef.style.setProperty('right', `calc(${right}px - 6rem)`);
+      toasterRef.classList.toggle('toaster--visible');
+    });
+
+    document.querySelector('.toaster__close-btn').addEventListener('click', function() {
+      document.querySelector('.toaster').classList.remove('toaster--visible');
+    });
+  </script>
+
+</body>
+</html>

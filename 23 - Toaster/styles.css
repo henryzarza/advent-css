@@ -1,0 +1,147 @@
+/* Variables */
+:root {
+  --white: #FFF;
+  --purple: #8D58FF;
+  --dark-purple: #3200A0;
+  --yellow: #FAFF00;
+}
+/* End variables */
+
+* {
+  box-sizing: border-box;
+  color: var(--white);
+  font-family: 'Roboto Mono', monospace;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.main__img {
+  box-shadow: 0px 0px 50px 0px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  height: 15.95rem;
+  transition: transform 290ms ease-in-out;
+  width: 15.95rem;
+  z-index: 1;
+}
+
+.main__img:hover {
+  transform: scale(1.05);
+}
+
+.toaster {
+  background-color: var(--purple);
+  max-width: 32.5rem;
+  padding: 2.91rem 3.55rem 3.56rem;
+  position: absolute;
+  transform: scale(0, 0);
+  transform-origin: top right;
+  transition: transform 330ms ease-in-out;
+  width: 100%;
+}
+
+.toaster--visible {
+  transform: scale(1, 1);
+}
+
+.toaster--visible .toaster__close-btn {
+  opacity: 1;
+  transform: translateY(-3rem);
+  transition-delay: 330ms;
+}
+
+.toaster__close-btn {
+  align-items: center;
+  background-color: transparent;
+  border: 2px solid transparent;
+  color: var(--dark-purple);
+  cursor: pointer;
+  display: flex;
+  gap: 0.78rem;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1rem;
+  padding: 0.5rem;
+  position: absolute;
+  opacity: 0;
+  text-transform: uppercase;
+  transition: all 270ms ease-in-out;
+  top: 0;
+}
+
+.toaster__close-btn svg path {
+  fill: var(--dark-purple);
+}
+
+.toaster__close-btn:is(:hover, :focus) {
+  border-color: var(--dark-purple);
+}
+
+.toaster__title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 5.875rem;
+  font-weight: 400;
+  line-height: 4.563rem;
+  margin-bottom: 1rem;
+}
+
+.toaster__description {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.875rem;
+  margin-bottom: 2.84rem;
+}
+
+.toaster__label {
+  color: var(--yellow);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1rem;
+}
+
+.toaster__input-container {
+  display: flex;
+  gap: 0.67rem;
+  margin-top: 0.5rem;
+}
+
+.toaster__input-container input {
+  background-color: rgba(198, 172, 255, 0.6);
+  border-radius: 0.25rem;
+  border: 1px solid transparent;
+  flex: 1;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1rem;
+  outline: none;
+  transition: border-color 280ms ease-in;
+  padding: 1rem;
+}
+
+.toaster__input-container input:focus {
+  border-color: var(--dark-purple);
+}
+
+.toaster__input-container button {
+  background: none;
+  border: 2px solid transparent;
+  border-radius: 0.25rem;
+  color: var(--yellow);
+  cursor: pointer;
+  transition: border-color 280ms ease-in;
+  padding: 1rem 0.25rem;
+}
+
+.toaster__input-container svg path {
+  fill: var(--yellow);
+}
+
+.toaster__input-container button:is(:hover, :focus) {
+  border-color: var(--yellow);
+}
