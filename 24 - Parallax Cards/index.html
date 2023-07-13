@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Author: Henry Zarza, Illustrator: Advent of CSS challenge">
+  <title>24 - Parallax Cards</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main class="container">
+    <div class="card-wrapper">
+      <div class="card" style="background-image: url('https://res.cloudinary.com/dcqu0udnd/image/upload/v1689189388/winter_jrmfit.avif');">
+        <div class="card-content">
+          <h2 class="card-title">Winter</h2>
+          <p class="card-description">Winter is the coldest season of the year in polar and temperate climates.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-wrapper">
+      <div class="card" style="background-image: url('https://res.cloudinary.com/dcqu0udnd/image/upload/v1689189389/spring_kfxh6u.avif');">
+        <div class="card-content">
+          <h2 class="card-title">Spring</h2>
+          <p class="card-description">Any snow begins to melt, swelling streams with runoff and any frosts become less severe.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-wrapper">
+      <div class="card" style="background-image: url('https://res.cloudinary.com/dcqu0udnd/image/upload/v1689189388/summer_cxudyz.avif');">
+        <div class="card-content">
+          <h2 class="card-title">Summer</h2>
+          <p class="card-description">It's the hottest of the four temperate seasons, occurring after spring and before autumn.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-wrapper">
+      <div class="card" style="background-image: url('https://res.cloudinary.com/dcqu0udnd/image/upload/v1689188644/autumn_bh5mxn.jpg');">
+        <div class="card-content">
+          <h2 class="card-title">Autumn</h2>
+          <p class="card-description">Leaves on the trees will turn yellow, orange, red and brown during autumn</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // is the fixed quantity in pixels to move in X and Y
+    const PIXELS_TO_MOVE = 40;
+    // is the fixed degrees to move in X and Y
+    const DEGREES_TO_MOVE = 60;
+
+    document.querySelectorAll(".card-wrapper").forEach(el => {
+      const card = el.querySelector(".card");
+
+      el.addEventListener("mousemove", function(e) {
+        const { top, left, width, height } = this.getBoundingClientRect();
+        const movementX = Math.max((e.pageX - left) / width, 0);
+        const movementY = Math.max((e.pageY - top) / height, 0);
+
+        const bgPositionX = (movementX * 100).toFixed(2);
+        const translateX = ((movementX - 0.5) * PIXELS_TO_MOVE).toFixed(3);
+        const translateY = ((movementY - 0.5) * PIXELS_TO_MOVE).toFixed(3);
+        const rotateX = ((movementY - 0.5) * DEGREES_TO_MOVE).toFixed(3);
+        const rotateY = ((movementX - 0.5) * DEGREES_TO_MOVE).toFixed(3);
+
+        this.style.transform = `translate3d(${translateX}px, ${translateY}px, 0) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        card.style.backgroundPosition = `${bgPositionX}% center`;
+      });
+
+      el.addEventListener("mouseleave", function(e) {
+        this.style.transform = 'translate3d(0, 0, 0)';
+        card.style.backgroundPosition = 'center';
+      });
+    });
+  </script>
+
+</body>
+</html>
